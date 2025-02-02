@@ -19,12 +19,12 @@ jobs:
       - name: Install dependencies
         run: |
           cd 04-gif-expert-app
-          npm install
+          yarn
 
       - name: Build project
         run: |
           cd 04-gif-expert-app
-          npm run build
+          yarn build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
