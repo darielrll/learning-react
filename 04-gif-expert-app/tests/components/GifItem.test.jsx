@@ -13,26 +13,29 @@ describe('Pruebas a GifItem', () => {
         expect(container).toMatchSnapshot()
     })
 
-    // test('debe mostrar la url y el title', () => {
-    //     const title = "Test Title";
-    //     const url = "https://testurl.com/test.gif";
-    //     render( <GifItem title={title} url={url} /> )       
+    test('debe mostrar la url y el ALT indicado', () => {
+        render( <GifItem title={title} url={url} /> )       
 
-    //     const imgElement = screen.getByRole('img');
-    //     expect(imgElement.src).toBe(url);
-    //     expect(imgElement.alt).toBe(title);
+        const {src, alt} = screen.getByRole('img');
+        expect(src).toBe(url);
+        expect(alt).toBe(title);
+    })
 
-    //     expect(screen.getByText(title)).toBeTruthy();
-    // })
+    test('debe de mostrar el titulo en el componente', () => {
+        render( <GifItem title={title} url={url} /> )       
 
+        expect(screen.getByText( title )).toBeTruthy();
+    })
+
+    // TODO: this tests, how to capture the error
     // test('debe lanzar error si no se reciben title y url', () => {
         
     //     render( <GifItem  /> )
 
-    //     // console.error = jest.fn(); // Mock console.error to suppress error output in test
+    //     console.error = jest.fn(); // Mock console.error to suppress error output in test
 
-    //     // expect(() => render( <GifItem /> )).toThrow();
-    //     // expect(console.error).toHaveBeenCalled();
+    //     expect(() => render( <GifItem /> )).toThrow();
+    //     expect(console.error).toHaveBeenCalled();
     // })
 
 })
