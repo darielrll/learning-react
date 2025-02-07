@@ -13,7 +13,6 @@ export const useFetchGifs = (category) => {
         setisLoading(false)
     }
 
-
     useEffect( () => {
         getImages();
     }, [])
