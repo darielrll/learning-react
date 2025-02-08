@@ -21,7 +21,7 @@ describe('Pruebas en el hook useFetchGif', () => {
         );
 
         const { images, isLoading } = result.current
-        
+
         expect( images.length ).toBeGreaterThan(0);
         expect( isLoading ).toBeFalsy()
     })
